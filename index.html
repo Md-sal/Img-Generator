@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 280px;
+            height: 270px;
+        }
+        input{
+            width: 80%;
+            height: 26px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 9px;
+            margin-top: 19px;
+            margin-left: 31px;
+            font-family: sans-serif;
+        }
+        input::placeholder{
+            color: rgb(8, 8, 8);
+            font-size: large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .c1{
+            background-color:#2c308d;
+            width: 27%;
+            height: 390px;
+            margin-top: 7%;
+            margin-left: 20%;
+            border-radius: 9px;
+        }
+        .btn{
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            margin-top: 20px;
+            margin-left: 186px;
+            padding: 9px;
+            border-radius: 5px;
+            transition: color 0.4s,background-color 0.4s;
+        }
+        .btn:hover{
+            color: black;
+            background-color: white;
+            border-radius: 7px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .p{
+            position: relative;
+        }
+        #c2{
+            position: absolute;
+            background-color:#ffffff;
+            color: rgb(0, 0, 0);
+            width: 27%;
+            bottom: 0px;
+            right: 25.5%;
+            height: 386px;
+            border-radius: 9px;
+            border: solid black 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #c2 h2{
+            position: absolute;
+            bottom: 16px;
+            left: 9px;
+        }
+        #c2 img{
+            top: 20px;
+            border-radius: 140px;
+            margin-left: 6px;
+        }
+        .mode{
+            position: absolute;
+            right: 17.5%;
+            bottom: 360px;
+            border-radius: 4px;
+        }
+        .light{
+            padding: 4px;
+            width: 55px;
+            margin-left: 10px;
+            background-color: white;
+            color: black;
+        }
+        .dark{
+            padding: 4px;
+            width: 55px;
+            margin-left: 3px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body> 
+    <div class="c1">
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="text" id="source" placeholder="Enter Img Url">
+        <input type="text" id="bio" placeholder="Enter Bio">
+        <button class="btn" onclick="update()">Submit</button>
+    </div>
+        <div class="p">
+            <div id="c2">
+                <h1 id="h1" style="margin: 0;">Name</h2><br>
+                <img id="src" alt="Enter valid src" src="data:image/webp;base64,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" alt="">
+                <h2 id="h2" style="margin: 0;">Bio</h2>
+        </div>
+    </div>
+    <div class="p"> 
+        <div class="mode">
+            <table>
+                <tr>
+                    <td>
+                        <button class="light" onclick="mode1()">Light</button>
+                    </td>
+                    <td>
+                        <button class="dark" onclick="modes()">Dark</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+<script>
+    function update(){
+        var Name=document.getElementById('name').value;
+       var img=  document.getElementById('source').value;
+       var Bio=  document.getElementById('bio').value;
+       document.getElementById('h1').innerHTML=Name;
+       document.getElementById('src').src=img;
+       document.getElementById('h2').innerHTML=Bio;
+    }
+    function modes(){
+        document.getElementById('c2').style.color="white";
+        document.getElementById('c2').style.backgroundColor="black";
+        document.body.style.backgroundColor="black";
+        document.getElementById('c2').style.border=" solid white 2px";
+        document.body.style.transition="all 1s ease"
+    }
+    function mode1(){
+        document.getElementById('c2').style.color="black";
+        document.getElementById('c2').style.backgroundColor="white";
+        document.body.style.backgroundColor="white";
+        document.body.style.transition="all 1s ease"
+        document.getElementById('c2').style.border=" solid black 2px";
+    }
+</script>
+</body>
+</html>
